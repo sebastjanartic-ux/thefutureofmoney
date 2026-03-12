@@ -72,52 +72,52 @@
     /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: var(--nav-bg); backdrop-filter: blur(18px);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 5vw; height: 68px;
+      background: var(--nav-bg);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 5vw; height: 56px;
+      transition: background 0.3s ease;
     }
-    .nav-l { display: flex; align-items: center; gap: 1rem; }
-    .nav-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
-    .nav-brand {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem; font-weight: 600; color: var(--navy);
-      text-decoration: none;
-    }
-    .nav-sep { color: var(--text-3); font-weight: 300; }
-    .nav-tag {
-      font-family: 'DM Mono', monospace; font-size: 0.52rem;
-      letter-spacing: 0.14em; color: var(--text-3); text-transform: uppercase;
-    }
-    .nav-r { display: flex; align-items: center; gap: 1rem; }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; }
+    .nav-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--navy); }
+    .nav-tag { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-3); text-transform: uppercase; }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
     .nav-link {
-      font-family: 'DM Mono', monospace; font-size: 0.54rem;
-      letter-spacing: 0.12em; color: var(--text-3); text-decoration: none;
-      text-transform: uppercase; transition: color 0.2s;
+      font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.12em;
+      color: var(--text-3); text-transform: uppercase; text-decoration: none;
+      transition: color 0.2s;
     }
     .nav-link:hover { color: var(--gold); }
-    .nav-link.active { color: var(--gold); }
-    .dark-toggle {
-      width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--border);
-      background: var(--card-bg); cursor: pointer; display: flex;
-      align-items: center; justify-content: center; transition: all 0.2s;
+    .nav-link.active { color: var(--navy); font-weight: 500; }
+    .nav-theme {
+      background: none; border: 1px solid var(--border); border-radius: 50%;
+      width: 38px; height: 38px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.25s; color: var(--text-3);
     }
-    .dark-toggle:hover { border-color: var(--gold); }
-    .dark-toggle svg { width: 16px; height: 16px; color: var(--text-3); }
-    .wa-nav {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--gold); color: #fff; border: none; border-radius: 6px;
-      padding: 0.45rem 1.1rem; font-family: 'DM Mono', monospace;
-      font-size: 0.54rem; letter-spacing: 0.08em; text-transform: uppercase;
-      text-decoration: none; cursor: pointer; transition: background 0.2s;
+    .nav-theme:hover { border-color: var(--gold); color: var(--gold); }
+    .nav-theme svg { width: 18px; height: 18px; fill: currentColor; }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: #fff;
+      font-size: 0.78rem; font-weight: 500; padding: 0.65rem 1.5rem;
+      border-radius: 4px; text-decoration: none; transition: all 0.25s;
     }
-    .wa-nav:hover { background: var(--gold-lt); }
+    .nav-cta:hover { background: var(--gold-lt); }
+    .nav-cta svg { width: 16px; height: 16px; fill: #fff; }
     .wa-nav svg { width: 14px; height: 14px; fill: #fff; }
 
     /* HERO */
     .contact-hero {
-      padding: 10rem 5vw 4rem; text-align: center;
-      background: var(--cream); position: relative;
+      padding: 140px 5vw 4rem; text-align: center;
+      background: var(--cream); position: relative; overflow: hidden;
+    }
+    .contact-hero-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px; opacity: 0.45;
     }
     .contact-hero::after {
       content: ''; position: absolute; bottom: 0; left: 0; right: 0;
@@ -126,15 +126,16 @@
     .contact-kicker {
       font-family: 'DM Mono', monospace; font-size: 0.6rem;
       letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase;
-      margin-bottom: 1rem;
+      margin-bottom: 1rem; position: relative; z-index: 1;
     }
     .contact-hero h1 {
-      font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 600; color: var(--navy); margin-bottom: 1rem;
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 600; color: var(--navy); margin-bottom: 1rem; position: relative; z-index: 1;
     }
+    .contact-hero h1 em { color: var(--gold); font-style: italic; }
     .contact-hero p {
       max-width: 520px; margin: 0 auto; font-size: 1rem;
-      color: var(--text-2); line-height: 1.7;
+      color: var(--text-2); line-height: 1.7; position: relative; z-index: 1;
     }
 
     /* FORM SECTION */
@@ -248,7 +249,9 @@
     @media (max-width: 700px) {
       .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
       .form-row { grid-template-columns: 1fr; }
-      .nav-tag, .nav-sep { display: none; }
+      .nav-tag { display: none; }
+      .nav-link { display: none; }
+      .nav-cta { display: none; }
     }
   </style>
 </head>
@@ -256,31 +259,27 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-l">
+  <a href="index.html" class="nav-brand">
     <div class="nav-dot"></div>
-    <a href="index.html" class="nav-brand">thefutureofmoney.ai</a>
-    <span class="nav-sep">&middot;</span>
-    <span class="nav-tag">Aurum Foundation Partner</span>
-  </div>
-  <div class="nav-r">
+    <span class="nav-name">thefutureofmoney.ai</span>
+    <span class="nav-tag">&middot; Aurum Foundation Partner</span>
+  </a>
+  <div class="nav-right">
     <a href="index.html" class="nav-link">Home</a>
     <a href="blog.html" class="nav-link">Blog</a>
     <a href="contact.html" class="nav-link active">Contact</a>
-    <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
-      <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
-      <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+    <button class="nav-theme" onclick="toggleTheme()" aria-label="Toggle dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" style="display:none"><path d="M12 18a6 6 0 110-12 6 6 0 010 12zm0-2a4 4 0 100-8 4 4 0 000 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24"><path d="M10 7a7 7 0 0012 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0010 7zm-6 5a8 8 0 0011.955 6.956C13.224 18.553 11 15.98 11 13V7c0-.643.084-1.265.24-1.857A7.987 7.987 0 004 12z"/></svg>
     </button>
-    <a href="https://wa.me/38641682838" class="wa-nav" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.511-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c-.001 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
-      Message me
-    </a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="contact-hero">
+  <div class="contact-hero-grid"></div>
   <div class="contact-kicker">Contact</div>
-  <h1>Let's Talk</h1>
+  <h1>Let's <em>Talk</em></h1>
   <p>Have a question about AI-managed trading, team building, or the Aurum ecosystem? Send us a message and we'll get back to you shortly.</p>
 </section>
 
@@ -397,25 +396,21 @@
 
 <script>
   // Dark mode
-  const toggle = document.getElementById('darkToggle');
-  const moonIcon = document.getElementById('iconMoon');
-  const sunIcon = document.getElementById('iconSun');
-
-  function setDark(dark) {
-    document.documentElement.classList.toggle('dark', dark);
-    localStorage.setItem('theme', dark ? 'dark' : 'light');
-    moonIcon.style.display = dark ? 'none' : 'block';
-    sunIcon.style.display = dark ? 'block' : 'none';
+  function toggleTheme() {
+    const d = !document.documentElement.classList.contains('dark');
+    document.documentElement.classList.toggle('dark', d);
+    localStorage.setItem('theme', d ? 'dark' : 'light');
+    document.querySelector('.icon-sun').style.display = d ? 'block' : 'none';
+    document.querySelector('.icon-moon').style.display = d ? 'none' : 'block';
   }
-
-  const saved = localStorage.getItem('theme');
-  if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    setDark(true);
-  }
-
-  toggle.addEventListener('click', () => {
-    setDark(!document.documentElement.classList.contains('dark'));
-  });
+  (function(){
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      document.querySelector('.icon-sun').style.display = 'block';
+      document.querySelector('.icon-moon').style.display = 'none';
+    }
+  })();
 
   // Form submission
   const form = document.getElementById('contactForm');

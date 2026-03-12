@@ -44,21 +44,25 @@ html.dark{
 body{background:var(--cream);color:var(--text);font-family:'Outfit',sans-serif;font-weight:300;line-height:1.6;transition:background .3s,color .3s}
 
 /* ── Nav ── */
-nav{position:fixed;top:0;left:0;width:100%;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:60px;transition:background .3s,border .3s}
+nav{position:fixed;top:0;left:0;width:100%;z-index:100;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:68px;transition:background .3s,border .3s}
 .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
 .nav-dot{width:8px;height:8px;border-radius:50%;background:var(--gold)}
-.nav-name{font-family:'DM Mono',monospace;font-size:.72rem;font-weight:500;letter-spacing:.08em;color:var(--navy);text-transform:uppercase}
+.nav-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--navy)}
 .nav-tag{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.1em;color:var(--text-3);text-transform:uppercase;margin-left:6px}
 .nav-right{display:flex;align-items:center;gap:1rem}
-.nav-theme{background:none;border:none;cursor:pointer;color:var(--text-3);display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;transition:color .2s}
-.nav-theme:hover{color:var(--gold)}
-.nav-theme svg{width:18px;height:18px}
+.nav-link{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.12em;color:var(--text-3);text-transform:uppercase;text-decoration:none;transition:color .2s}
+.nav-link:hover{color:var(--gold)}
+.nav-link.active{color:var(--navy);font-weight:500}
+.nav-theme{background:none;border:1px solid var(--border);border-radius:50%;width:38px;height:38px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .25s;color:var(--text-3)}
+.nav-theme:hover{border-color:var(--gold);color:var(--gold)}
+.nav-theme svg{width:18px;height:18px;fill:currentColor}
 .nav-theme .sun{display:none}
 .nav-theme .moon{display:block}
 html.dark .nav-theme .sun{display:block}
 html.dark .nav-theme .moon{display:none}
-.nav-cta{background:var(--gold);color:#fff;font-size:.68rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:.5rem 1.1rem;border-radius:4px;text-decoration:none;transition:background .25s}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#fff;font-size:.78rem;font-weight:500;padding:.65rem 1.5rem;border-radius:4px;text-decoration:none;transition:all .25s}
 .nav-cta:hover{background:var(--gold-lt)}
+.nav-cta svg{width:16px;height:16px;fill:#fff}
 
 /* ── Hamburger ── */
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
@@ -117,6 +121,7 @@ html.dark .nav-theme .moon{display:none}
 /* ── Responsive ── */
 @media(max-width:900px){
 .nav-tag{display:none}
+.nav-link{display:none}
 .nav-cta{display:none}
 .hamburger{display:flex}
 }
@@ -128,15 +133,17 @@ html.dark .nav-theme .moon{display:none}
 <nav>
   <a href="index.html" class="nav-brand">
     <span class="nav-dot"></span>
-    <span class="nav-name">The Future of Money</span>
-    <span class="nav-tag">&middot; Blog</span>
+    <span class="nav-name">thefutureofmoney.ai</span>
+    <span class="nav-tag">&middot; Aurum Foundation Partner</span>
   </a>
   <div class="nav-right">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="blog.html" class="nav-link active">Blog</a>
+    <a href="contact.html" class="nav-link">Contact</a>
     <button class="nav-theme" onclick="toggleTheme()" aria-label="Toggle theme">
       <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
       <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
     </button>
-    <a href="https://wa.me/38641682838" class="nav-cta">Get Started</a>
     <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -148,7 +155,7 @@ html.dark .nav-theme .moon{display:none}
   <div class="mobile-menu-head">
     <a href="index.html" class="nav-brand">
       <span class="nav-dot"></span>
-      <span class="nav-name">The Future of Money</span>
+      <span class="nav-name">thefutureofmoney.ai</span>
     </a>
     <button class="mobile-menu-close" onclick="toggleMenu()" aria-label="Close menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
