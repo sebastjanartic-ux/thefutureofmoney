@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Use &middot; thefutureofmoney.ai</title>
+  <meta name="description" content="Terms of Use for thefutureofmoney.ai — rules and conditions for using our website and services.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.thefutureofmoney.ai/terms.html">
+  <meta property="og:title" content="Terms of Use · thefutureofmoney.ai">
+  <meta property="og:description" content="Terms of Use for thefutureofmoney.ai — rules and conditions for using our website and services.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.thefutureofmoney.ai/terms.html">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --cream: #FAFAF7; --cream-2: #F4F3EE; --cream-3: #ECEAE2;
+      --navy: #0F1F3D; --navy-2: #1A3260;
+      --gold: #B8933F; --gold-lt: #D4AE62;
+      --text: #1A1A1A; --text-2: #4A4A4A; --text-3: #8A8A8A;
+      --border: #E2E0D8; --border-2: #D0CEC4;
+      --card-bg: #fff; --nav-bg: rgba(250,250,247,0.93);
+      --footer-bg: #0A1528;
+    }
+    html.dark {
+      --cream: #0F172A; --cream-2: #1E293B; --cream-3: #334155;
+      --navy: #F1F5F9; --navy-2: #E2E8F0;
+      --gold: #D4AE62; --gold-lt: #E8C97A;
+      --text: #F1F5F9; --text-2: #CBD5E1; --text-3: #94A3B8;
+      --border: #334155; --border-2: #475569;
+      --card-bg: #1E293B; --nav-bg: rgba(15,23,42,0.93);
+      --footer-bg: #020617;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 5vw; height: 68px;
+      background: var(--nav-bg);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s ease;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; }
+    .nav-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--navy); }
+    .nav-tag { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-3); text-transform: uppercase; }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .nav-link { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.08em; color: var(--text-3); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
+    .nav-link:hover { color: var(--gold); }
+    .nav-theme {
+      background: none; border: 1px solid var(--border); border-radius: 50%;
+      width: 38px; height: 38px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.25s; color: var(--text-3);
+    }
+    .nav-theme:hover { border-color: var(--gold); color: var(--gold); }
+    .nav-theme svg { width: 18px; height: 18px; fill: currentColor; }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: #fff;
+      font-size: 0.78rem; font-weight: 500; padding: 0.65rem 1.5rem;
+      border-radius: 4px; text-decoration: none; transition: all 0.25s;
+    }
+    .nav-cta:hover { background: var(--gold-lt); }
+    .nav-cta svg { width: 16px; height: 16px; fill: #fff; }
+    .hamburger {
+      display: none; background: none; border: 1px solid var(--border);
+      border-radius: 6px; width: 38px; height: 38px; cursor: pointer;
+      flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+      transition: all 0.25s;
+    }
+    .hamburger:hover { border-color: var(--gold); }
+    .hamburger span {
+      display: block; width: 18px; height: 1.5px; background: var(--text);
+      transition: all 0.3s;
+    }
+    .mobile-menu {
+      position: fixed; inset: 0; z-index: 150;
+      background: var(--cream); display: flex; flex-direction: column;
+      padding: 0; opacity: 0; visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .mobile-menu.open { opacity: 1; visibility: visible; }
+    .mobile-menu-head {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 5vw; height: 68px; border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu-close {
+      background: none; border: 1px solid var(--border); border-radius: 6px;
+      width: 38px; height: 38px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text); font-size: 1.2rem; transition: all 0.25s;
+    }
+    .mobile-menu-close:hover { border-color: var(--gold); color: var(--gold); }
+    .mobile-menu-body {
+      flex: 1; display: flex; flex-direction: column;
+      justify-content: center; align-items: center; gap: 2rem;
+      padding: 2rem 5vw;
+    }
+    .mobile-menu-link {
+      font-family: 'Cormorant Garamond', serif; font-size: 2rem;
+      font-weight: 600; color: var(--navy); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .mobile-menu-link:hover { color: var(--gold); }
+    .mobile-menu-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--gold); color: #fff;
+      font-size: 0.92rem; font-weight: 500;
+      padding: 1rem 2.4rem; border-radius: 5px; text-decoration: none;
+      margin-top: 1rem; transition: all 0.25s;
+    }
+    .mobile-menu-cta:hover { background: var(--gold-lt); }
+    .mobile-menu-cta svg { width: 18px; height: 18px; fill: #fff; }
+
+    /* CONTENT */
+    .page-content { padding-top: 120px; max-width: 780px; margin: 0 auto; padding-left: 5vw; padding-right: 5vw; padding-bottom: 5rem; }
+    .page-content h1 { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(2rem, 5vw, 3rem); color: var(--navy); line-height: 1.15; margin-bottom: 0.5rem; }
+    .page-content h1 em { color: var(--gold); font-style: italic; }
+    .page-content .page-date { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; color: var(--text-3); text-transform: uppercase; margin-bottom: 2.5rem; }
+    .page-content h2 { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.4rem; color: var(--navy); margin: 2.5rem 0 1rem; line-height: 1.25; }
+    .page-content h2:first-of-type { margin-top: 2rem; }
+    .page-content p { color: var(--text-2); font-size: 0.95rem; line-height: 1.75; margin-bottom: 1.2rem; }
+    .page-content ul, .page-content ol { margin: 1rem 0 1.5rem 1.5rem; }
+    .page-content li { color: var(--text-2); font-size: 0.95rem; line-height: 1.75; margin-bottom: 0.5rem; }
+    .page-content a { color: var(--gold); text-decoration: underline; transition: color 0.2s; }
+    .page-content a:hover { color: var(--gold-lt); }
+    .page-content strong { font-weight: 500; color: var(--text); }
+
+    /* FOOTER */
+    footer {
+      background: var(--footer-bg); padding: 2rem 5vw;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+    }
+    .footer-l { font-family: 'DM Mono', monospace; font-size: 0.56rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.45); text-transform: uppercase; }
+    .footer-r a { font-family: 'DM Mono', monospace; font-size: 0.56rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.38); text-decoration: none; margin-left: 1.5rem; transition: color 0.2s; }
+    .footer-r a:hover { color: var(--gold); }
+
+    /* COOKIE */
+    .cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(15,31,61,0.97); backdrop-filter: blur(12px);
+      color: #fff; padding: 1.2rem 5vw; display: none;
+    }
+    .cookie-banner.show { display: block; }
+    .cookie-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .cookie-text { font-size: 0.8rem; color: rgba(255,255,255,0.6); flex: 1; min-width: 280px; }
+    .cookie-text a { color: var(--gold-lt); text-decoration: underline; }
+    .cookie-btns { display: flex; gap: 10px; }
+    .cookie-accept { background: var(--gold); color: #fff; border: none; padding: 0.6rem 1.4rem; border-radius: 4px; font-weight: 500; cursor: pointer; font-size: 0.8rem; }
+    .cookie-accept:hover { background: var(--gold-lt); }
+    .cookie-decline { background: transparent; color: rgba(255,255,255,0.4); border: 1px solid rgba(255,255,255,0.15); padding: 0.6rem 1.4rem; border-radius: 4px; font-weight: 500; cursor: pointer; font-size: 0.8rem; }
+    .cookie-decline:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .nav-tag { display: none; }
+      .nav-link { display: none; }
+      .nav-cta { display: none; }
+      .hamburger { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">
+    <div class="nav-dot"></div>
+    <span class="nav-name">thefutureofmoney.ai</span>
+    <span class="nav-tag">&middot; Aurum Foundation Partner</span>
+  </a>
+  <div class="nav-right">
+    <a href="blog.html" class="nav-link">Blog</a>
+    <button class="nav-theme" onclick="toggleTheme()" aria-label="Toggle dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 18a6 6 0 110-12 6 6 0 010 12zm0-2a4 4 0 100-8 4 4 0 000 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" style="display:none"><path d="M10 7a7 7 0 0012 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0010 7zm-6 5a8 8 0 0011.955 6.956C13.224 18.553 11 15.98 11 13V7c0-.643.084-1.265.24-1.857A7.987 7.987 0 004 12z"/></svg>
+    </button>
+    <a href="https://wa.me/38641682838" class="nav-cta">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.61.609l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.582l-.386-.238-2.65.888.888-2.65-.238-.386A9.94 9.94 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Message me
+    </a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-head">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-dot"></div>
+      <span class="nav-name">thefutureofmoney.ai</span>
+    </a>
+    <button class="mobile-menu-close" onclick="toggleMenu()">&times;</button>
+  </div>
+  <div class="mobile-menu-body">
+    <a href="index.html" class="mobile-menu-link">Home</a>
+    <a href="blog.html" class="mobile-menu-link">Blog</a>
+    <a href="https://wa.me/38641682838" class="mobile-menu-cta">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.61.609l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.582l-.386-.238-2.65.888.888-2.65-.238-.386A9.94 9.94 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Message me
+    </a>
+  </div>
+</div>
+
+<!-- PAGE CONTENT -->
+<div class="page-content">
+
+  <h1><em>Terms</em> of Use</h1>
+  <p class="page-date">Effective: March 2026</p>
+
+  <h2>1. Acceptance of Terms</h2>
+  <p>By accessing, browsing, or using the website located at <a href="https://www.thefutureofmoney.ai">www.thefutureofmoney.ai</a> (the "Website"), you acknowledge that you have read, understood, and agree to be bound by these Terms of Use ("Terms"). If you do not agree with any part of these Terms, you must discontinue use of the Website immediately.</p>
+  <p>These Terms constitute a legally binding agreement between you ("User", "you", or "your") and thefutureofmoney.ai, operated by Andrej Sekirnik s.p. ("we", "us", or "our"). We reserve the right to update or modify these Terms at any time, and your continued use of the Website following any such changes constitutes your acceptance of the revised Terms.</p>
+
+  <h2>2. Description of Service</h2>
+  <p>thefutureofmoney.ai is an informational website focused on digital finance, cryptocurrency, blockchain technology, and related topics. The Website publishes educational content, blog articles, and general information about financial products and services in the digital asset space.</p>
+  <p><strong>thefutureofmoney.ai operates as an independent partner of the Aurum Foundation.</strong> We are not the Aurum Foundation, nor are we a subsidiary, affiliate, division, or employee of the Aurum Foundation. Any information we provide about Aurum Foundation products or services reflects our independent understanding and should be verified directly with the Aurum Foundation. The views, opinions, and content published on this Website are those of thefutureofmoney.ai and do not necessarily represent the official positions or policies of the Aurum Foundation.</p>
+
+  <h2>3. Disclaimer of Financial Advice</h2>
+  <p>The content published on this Website is provided for informational and educational purposes only. Nothing on this Website constitutes, or should be construed as:</p>
+  <ul>
+    <li>Financial, investment, tax, or legal advice of any kind.</li>
+    <li>A recommendation or endorsement to buy, sell, hold, or trade any cryptocurrency, digital asset, security, or financial instrument.</li>
+    <li>A solicitation or offer to buy or sell any financial product.</li>
+    <li>A guarantee or prediction of future financial performance or returns.</li>
+  </ul>
+  <p><strong>Past performance does not guarantee future results.</strong> Cryptocurrency and digital asset investments are inherently volatile and carry a high degree of risk, including the potential loss of your entire investment. Prices can fluctuate significantly and unpredictably. You should never invest more than you can afford to lose.</p>
+  <p>Before making any financial decisions, you should conduct your own independent research and consult with a qualified, licensed financial adviser, tax professional, or legal counsel who can assess your individual circumstances, risk tolerance, and financial objectives. We strongly recommend that you do not rely solely on the information provided on this Website when making investment decisions.</p>
+
+  <h2>4. User Responsibilities</h2>
+  <p>By using this Website, you agree to:</p>
+  <ul>
+    <li>Use the Website only for lawful purposes and in accordance with these Terms and all applicable local, national, and international laws and regulations.</li>
+    <li>Not attempt to gain unauthorised access to any part of the Website, its servers, or any systems or networks connected to the Website.</li>
+    <li>Not use any automated systems, including bots, scrapers, or crawlers, to access or interact with the Website without our prior written consent.</li>
+    <li>Not transmit any material that is unlawful, harmful, threatening, abusive, defamatory, or otherwise objectionable through any communication channel provided on the Website.</li>
+    <li>Not reproduce, duplicate, copy, sell, or exploit any portion of the Website for commercial purposes without our express written permission.</li>
+    <li>Provide accurate and truthful information when contacting us through any communication channel.</li>
+    <li>Accept full responsibility for any financial decisions you make based on information found on this Website.</li>
+    <li>Confirm that you are at least 18 years of age (or the age of legal majority in your jurisdiction) and are legally capable of entering into binding agreements.</li>
+  </ul>
+
+  <h2>5. Intellectual Property</h2>
+  <p>All content on this Website, including but not limited to text, graphics, logos, icons, images, audio clips, digital downloads, data compilations, and software, is the property of thefutureofmoney.ai (Andrej Sekirnik s.p.) or its content suppliers and is protected by international copyright, trademark, and other intellectual property laws.</p>
+  <p>You may view, download, and print pages from the Website for your own personal, non-commercial use, provided that you:</p>
+  <ul>
+    <li>Do not modify the content in any way.</li>
+    <li>Do not remove or alter any copyright, trademark, or other proprietary notices.</li>
+    <li>Do not use any content for commercial purposes without our prior written consent.</li>
+  </ul>
+  <p>The thefutureofmoney.ai name, logo, and all related names, logos, product and service names, designs, and slogans are trademarks or trade dress of Andrej Sekirnik s.p. You may not use such marks without our prior written permission. All other names, logos, product and service names, designs, and slogans on this Website are the trademarks of their respective owners, including the Aurum Foundation.</p>
+
+  <h2>6. Third-Party Links and Services</h2>
+  <p>This Website may contain links to third-party websites, services, and resources, including but not limited to:</p>
+  <ul>
+    <li><strong>Aurum Foundation:</strong> As an independent Aurum Foundation partner, we may link to Aurum Foundation websites, products, and materials. These links are provided for your convenience and information. We do not control the Aurum Foundation's websites, and linking to them does not imply our endorsement of, or responsibility for, their content, products, or practices.</li>
+    <li><strong>WhatsApp (Meta Platforms, Inc.):</strong> We provide WhatsApp contact links for communication purposes. Your use of WhatsApp is subject to WhatsApp's own terms of service and privacy policy. We are not responsible for WhatsApp's data handling practices.</li>
+    <li><strong>Other external links:</strong> Blog articles and other content may include links to external resources, news articles, and reference materials. We do not endorse or assume responsibility for the content, accuracy, or availability of any third-party website.</li>
+  </ul>
+  <p>You acknowledge and agree that we are not responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any content, goods, or services available on or through any third-party website or service.</p>
+
+  <h2>7. Limitation of Liability</h2>
+  <p>To the fullest extent permitted by applicable law, thefutureofmoney.ai (Andrej Sekirnik s.p.), its owner, and any associated parties shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages, including but not limited to:</p>
+  <ul>
+    <li>Financial losses, lost profits, or lost savings resulting from your use of or reliance on the information provided on this Website.</li>
+    <li>Losses arising from any investment decisions made based on the content of this Website.</li>
+    <li>Damages resulting from your inability to access or use the Website.</li>
+    <li>Damages caused by errors, omissions, inaccuracies, or outdated information in the Website content.</li>
+    <li>Damages resulting from unauthorised access to or alteration of your transmissions or data.</li>
+    <li>Any other matter relating to your use of the Website.</li>
+  </ul>
+  <p>The information on this Website is provided on an "as is" and "as available" basis without any warranties of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, non-infringement, accuracy, completeness, or timeliness. We do not warrant that the Website will be uninterrupted, error-free, or free of viruses or other harmful components.</p>
+
+  <h2>8. Indemnification</h2>
+  <p>You agree to indemnify, defend, and hold harmless thefutureofmoney.ai (Andrej Sekirnik s.p.), its owner, agents, and any associated parties from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable legal fees) arising out of or in connection with:</p>
+  <ul>
+    <li>Your use of or access to the Website.</li>
+    <li>Your violation of these Terms.</li>
+    <li>Your violation of any applicable law or regulation.</li>
+    <li>Your violation of any third-party rights, including intellectual property rights.</li>
+    <li>Any financial decisions or investment actions you take based on information obtained from this Website.</li>
+  </ul>
+
+  <h2>9. Governing Law and Jurisdiction</h2>
+  <p>These Terms shall be governed by and construed in accordance with the laws of the Republic of Slovenia, without regard to its conflict of law provisions. Any disputes arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the competent courts in the Republic of Slovenia.</p>
+  <p>If you are accessing the Website from a location outside of Slovenia, you are responsible for compliance with all applicable local laws. If any provision of these Terms is found to be inconsistent with mandatory consumer protection laws in your jurisdiction, such laws shall apply to the extent required.</p>
+
+  <h2>10. Changes to Terms</h2>
+  <p>We reserve the right to modify, amend, or replace these Terms at any time at our sole discretion. When we make material changes, we will update the "Effective" date at the top of this page. We encourage you to review these Terms periodically.</p>
+  <p>Your continued use of the Website after any changes to these Terms constitutes your acceptance of the updated Terms. If you do not agree with the revised Terms, you must stop using the Website immediately.</p>
+
+  <h2>11. Severability</h2>
+  <p>If any provision of these Terms is held to be invalid, illegal, or unenforceable by a court of competent jurisdiction, such provision shall be modified to the minimum extent necessary to make it valid and enforceable, or if modification is not possible, it shall be severed from these Terms. The invalidity or unenforceability of any provision shall not affect the validity or enforceability of the remaining provisions, which shall continue in full force and effect.</p>
+
+  <h2>12. Contact Information</h2>
+  <p>If you have any questions, concerns, or feedback regarding these Terms of Use, please contact us:</p>
+  <p><strong>thefutureofmoney.ai</strong> (Andrej Sekirnik s.p.)<br>
+  Prvomajska ulica 35<br>
+  3250 Rogaska Slatina<br>
+  Slovenia</p>
+  <p>Email: <a href="mailto:office@thefutureofmoney.ai">office@thefutureofmoney.ai</a></p>
+  <p>We will do our best to respond to your inquiry promptly and address any concerns you may have.</p>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-l">&copy; 2026 thefutureofmoney.ai &middot; Independent Aurum Foundation Partner &middot; All rights reserved</div>
+  <div class="footer-r">
+    <a href="mailto:office@thefutureofmoney.ai">office@thefutureofmoney.ai</a>
+    <a href="blog.html">Blog</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="disclaimer.html">Disclaimer</a>
+  </div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-inner">
+    <div class="cookie-text">This website uses cookies to improve your experience. By clicking "Accept", you agree to our <a href="privacy.html">Privacy Policy</a>.</div>
+    <div class="cookie-btns">
+      <button class="cookie-accept" onclick="acceptCookies()">Accept</button>
+      <button class="cookie-decline" onclick="declineCookies()">Decline</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Theme toggle
+  function applyTheme(dark) {
+    document.documentElement.classList.toggle('dark', dark);
+    document.querySelector('.icon-sun').style.display = dark ? 'none' : 'block';
+    document.querySelector('.icon-moon').style.display = dark ? 'block' : 'none';
+  }
+  function toggleTheme() {
+    const isDark = !document.documentElement.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    applyTheme(isDark);
+  }
+  (function() {
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(saved ? saved === 'dark' : prefersDark);
+  })();
+
+  // Mobile menu
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const isOpen = menu.classList.toggle('open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  // Cookie banner
+  (function() {
+    if (!localStorage.getItem('cookie_consent')) {
+      document.getElementById('cookieBanner').classList.add('show');
+    }
+  })();
+  function acceptCookies() {
+    localStorage.setItem('cookie_consent', 'accepted');
+    document.getElementById('cookieBanner').classList.remove('show');
+  }
+  function declineCookies() {
+    localStorage.setItem('cookie_consent', 'declined');
+    document.getElementById('cookieBanner').classList.remove('show');
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disclaimer &middot; thefutureofmoney.ai</title>
+  <meta name="description" content="Disclaimer for thefutureofmoney.ai — important notices about crypto trading risks, earnings claims, and affiliate relationships.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.thefutureofmoney.ai/disclaimer.html">
+  <meta property="og:title" content="Disclaimer &middot; thefutureofmoney.ai">
+  <meta property="og:description" content="Disclaimer for thefutureofmoney.ai — important notices about crypto trading risks, earnings claims, and affiliate relationships.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.thefutureofmoney.ai/disclaimer.html">
+  <meta property="og:image" content="https://www.thefutureofmoney.ai/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.thefutureofmoney.ai/og-image.png">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --cream:   #FAFAF7;
+      --cream-2: #F4F3EE;
+      --cream-3: #ECEAE2;
+      --navy:    #0F1F3D;
+      --navy-2:  #1A3260;
+      --gold:    #B8933F;
+      --gold-lt: #D4AE62;
+      --text:    #1A1A1A;
+      --text-2:  #4A4A4A;
+      --text-3:  #8A8A8A;
+      --border:  #E2E0D8;
+      --border-2:#D0CEC4;
+      --card-bg: #fff;
+      --nav-bg:  rgba(250,250,247,0.93);
+      --footer-bg: #0A1528;
+    }
+
+    html.dark {
+      --cream:   #0F172A;
+      --cream-2: #1E293B;
+      --cream-3: #334155;
+      --navy:    #F1F5F9;
+      --navy-2:  #E2E8F0;
+      --gold:    #D4AE62;
+      --gold-lt: #E8C97A;
+      --text:    #F1F5F9;
+      --text-2:  #CBD5E1;
+      --text-3:  #94A3B8;
+      --border:  #334155;
+      --border-2:#475569;
+      --card-bg: #1E293B;
+      --nav-bg:  rgba(15,23,42,0.93);
+      --footer-bg: #020617;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 5vw; height: 68px;
+      background: var(--nav-bg);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s ease;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; }
+    .nav-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--navy); }
+    .nav-tag { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-3); text-transform: uppercase; }
+    .nav-right { display: flex; align-items: center; gap: 12px; }
+    .nav-link { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.08em; color: var(--text-3); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
+    .nav-link:hover { color: var(--gold); }
+    .nav-theme {
+      background: none; border: 1px solid var(--border); border-radius: 50%;
+      width: 38px; height: 38px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.25s; color: var(--text-3);
+    }
+    .nav-theme:hover { border-color: var(--gold); color: var(--gold); }
+    .nav-theme svg { width: 18px; height: 18px; fill: currentColor; }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold); color: #fff;
+      font-size: 0.78rem; font-weight: 500; padding: 0.65rem 1.5rem;
+      border-radius: 4px; text-decoration: none; transition: all 0.25s;
+    }
+    .nav-cta:hover { background: var(--gold-lt); }
+    .nav-cta svg { width: 16px; height: 16px; fill: #fff; }
+    .hamburger {
+      display: none; background: none; border: 1px solid var(--border);
+      border-radius: 6px; width: 38px; height: 38px; cursor: pointer;
+      flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+      transition: all 0.25s;
+    }
+    .hamburger:hover { border-color: var(--gold); }
+    .hamburger span {
+      display: block; width: 18px; height: 1.5px; background: var(--text);
+      transition: all 0.3s;
+    }
+    .mobile-menu {
+      position: fixed; inset: 0; z-index: 150;
+      background: var(--cream); display: flex; flex-direction: column;
+      padding: 0; opacity: 0; visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .mobile-menu.open { opacity: 1; visibility: visible; }
+    .mobile-menu-head {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0 5vw; height: 68px; border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu-close {
+      background: none; border: 1px solid var(--border); border-radius: 6px;
+      width: 38px; height: 38px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text); font-size: 1.2rem; transition: all 0.25s;
+    }
+    .mobile-menu-close:hover { border-color: var(--gold); color: var(--gold); }
+    .mobile-menu-body {
+      flex: 1; display: flex; flex-direction: column;
+      justify-content: center; align-items: center; gap: 2rem;
+      padding: 2rem 5vw;
+    }
+    .mobile-menu-link {
+      font-family: 'Cormorant Garamond', serif; font-size: 2rem;
+      font-weight: 600; color: var(--navy); text-decoration: none;
+      transition: color 0.2s;
+    }
+    .mobile-menu-link:hover { color: var(--gold); }
+    .mobile-menu-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--gold); color: #fff;
+      font-size: 0.92rem; font-weight: 500;
+      padding: 1rem 2.4rem; border-radius: 5px; text-decoration: none;
+      margin-top: 1rem; transition: all 0.25s;
+    }
+    .mobile-menu-cta:hover { background: var(--gold-lt); }
+    .mobile-menu-cta svg { width: 18px; height: 18px; fill: #fff; }
+
+    /* HELPERS */
+    .s-inner { max-width: 1100px; margin: 0 auto; padding: 0 5vw; }
+    .s-label {
+      font-family: 'DM Mono', monospace; font-size: 0.58rem;
+      letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    /* ARTICLE */
+    .article-hero { padding: 140px 5vw 3rem; text-align: center; position: relative; overflow: hidden; }
+    .article-hero-grid { position: absolute; inset: 0; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 60px 60px; opacity: 0.45; }
+    .article-hero-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .article-meta { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; }
+    .article-meta span { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; color: var(--text-3); text-transform: uppercase; }
+    .article-hero h1 { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: clamp(2rem, 5vw, 3.2rem); color: var(--navy); line-height: 1.15; margin-bottom: 1rem; }
+    .article-hero h1 em { color: var(--gold); font-style: italic; }
+    .article-hero .article-lead { font-size: 1.05rem; color: var(--text-2); max-width: 560px; margin: 0 auto; line-height: 1.75; }
+    .article-body { max-width: 780px; margin: 0 auto; padding: 3rem 5vw 5rem; }
+    .article-body h2 { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.4rem; color: var(--navy); margin: 2.5rem 0 1rem; line-height: 1.25; }
+    .article-body h2:first-of-type { margin-top: 0; }
+    .article-body p { font-size: 0.95rem; color: var(--text-2); line-height: 1.75; margin-bottom: 1.2rem; }
+    .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.5rem; }
+    .article-body li { font-size: 0.95rem; color: var(--text-2); line-height: 1.75; margin-bottom: 0.5rem; }
+    .article-body blockquote { border-left: 3px solid var(--gold); padding: 1rem 1.5rem; margin: 1.5rem 0; background: var(--cream-2); border-radius: 0 8px 8px 0; }
+    .article-body blockquote p { color: var(--text); font-style: italic; margin-bottom: 0; }
+    .article-body a { color: var(--gold); text-decoration: underline; transition: color 0.2s; }
+    .article-body a:hover { color: var(--gold-lt); }
+    .article-body strong { font-weight: 500; color: var(--text); }
+
+    /* FOOTER */
+    footer {
+      background: var(--footer-bg); padding: 2rem 5vw;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+    }
+    .footer-l { font-family: 'DM Mono', monospace; font-size: 0.56rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.45); text-transform: uppercase; }
+    .footer-r a { font-family: 'DM Mono', monospace; font-size: 0.56rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.38); text-decoration: none; margin-left: 1.5rem; transition: color 0.2s; }
+    .footer-r a:hover { color: var(--gold); }
+
+    /* COOKIE */
+    .cookie-banner {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(15,31,61,0.97); backdrop-filter: blur(12px);
+      color: #fff; padding: 1.2rem 5vw; display: none;
+    }
+    .cookie-banner.show { display: block; }
+    .cookie-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .cookie-text { font-size: 0.8rem; color: rgba(255,255,255,0.6); flex: 1; min-width: 280px; }
+    .cookie-text a { color: var(--gold-lt); text-decoration: underline; }
+    .cookie-btns { display: flex; gap: 10px; }
+    .cookie-accept { background: var(--gold); color: #fff; border: none; padding: 0.6rem 1.4rem; border-radius: 4px; font-weight: 500; cursor: pointer; font-size: 0.8rem; }
+    .cookie-accept:hover { background: var(--gold-lt); }
+    .cookie-decline { background: transparent; color: rgba(255,255,255,0.4); border: 1px solid rgba(255,255,255,0.15); padding: 0.6rem 1.4rem; border-radius: 4px; font-weight: 500; cursor: pointer; font-size: 0.8rem; }
+    .cookie-decline:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .nav-tag { display: none; }
+      .nav-link { display: none; }
+      .nav-cta { display: none; }
+      .hamburger { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">
+    <div class="nav-dot"></div>
+    <span class="nav-name">thefutureofmoney.ai</span>
+    <span class="nav-tag">&middot; Aurum Foundation Partner</span>
+  </a>
+  <div class="nav-right">
+    <a href="blog.html" class="nav-link">Blog</a>
+    <button class="nav-theme" onclick="toggleTheme()" aria-label="Toggle dark mode">
+      <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 18a6 6 0 110-12 6 6 0 010 12zm0-2a4 4 0 100-8 4 4 0 000 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" style="display:none"><path d="M10 7a7 7 0 0012 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0010 7zm-6 5a8 8 0 0011.955 6.956C13.224 18.553 11 15.98 11 13V7c0-.643.084-1.265.24-1.857A7.987 7.987 0 004 12z"/></svg>
+    </button>
+    <a href="https://wa.me/38641682838" class="nav-cta">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.61.609l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.582l-.386-.238-2.65.888.888-2.65-.238-.386A9.94 9.94 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Message me
+    </a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-head">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-dot"></div>
+      <span class="nav-name">thefutureofmoney.ai</span>
+    </a>
+    <button class="mobile-menu-close" onclick="toggleMenu()">&times;</button>
+  </div>
+  <div class="mobile-menu-body">
+    <a href="index.html" class="mobile-menu-link">Home</a>
+    <a href="blog.html" class="mobile-menu-link">Blog</a>
+    <a href="https://wa.me/38641682838" class="mobile-menu-cta">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.61.609l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 01-5.39-1.582l-.386-.238-2.65.888.888-2.65-.238-.386A9.94 9.94 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Message me
+    </a>
+  </div>
+</div>
+
+<!-- ARTICLE HERO -->
+<section class="article-hero">
+  <div class="article-hero-grid"></div>
+  <div class="article-hero-inner">
+    <div class="article-meta">
+      <span>Last Updated: March 2026</span>
+    </div>
+    <h1><em>Disclaimer</em></h1>
+    <p class="article-lead">Important notices about cryptocurrency trading risks, earnings representations, affiliate relationships, and the limitations of information provided on this website.</p>
+  </div>
+</section>
+
+<!-- ARTICLE BODY -->
+<div class="article-body">
+
+  <h2>1. General Disclaimer</h2>
+  <p>The information provided on thefutureofmoney.ai (the "Website"), operated by Andrej Sekirnik s.p., Prvomajska ulica 35, 3250 Rogaska Slatina, Slovenia, is for general informational and educational purposes only. All information on the Website is provided in good faith; however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Website.</p>
+  <p>By accessing and using this Website, you acknowledge that you have read, understood, and agreed to this Disclaimer in its entirety. If you do not agree with any part of this Disclaimer, you should discontinue use of this Website immediately.</p>
+
+  <h2>2. No Financial Advice</h2>
+  <p>thefutureofmoney.ai is <strong>not</strong> a registered financial advisor, broker, dealer, investment advisor, or financial planner. We do not hold any licences or registrations required to provide personalised financial advice in any jurisdiction. None of the content on this Website, including but not limited to blog posts, product descriptions, testimonials, income examples, or any other materials, constitutes investment advice, financial advice, trading advice, or any other form of professional advice.</p>
+  <p>You should always conduct your own independent research and due diligence before making any investment or financial decision. We strongly recommend that you consult with a qualified, licensed financial advisor, accountant, or legal professional who can evaluate your individual financial situation, risk tolerance, and investment objectives before engaging in any cryptocurrency trading, investing, or related activity.</p>
+  <p>Any mention of specific cryptocurrencies, digital assets, trading strategies, or financial products on this Website does not constitute a recommendation to buy, sell, hold, or trade any asset. We do not provide personalised recommendations based on your individual circumstances.</p>
+
+  <h2>3. Investment Risk Warning</h2>
+  <p><strong>Cryptocurrency and digital asset trading involves substantial risk of loss and is not suitable for every person.</strong> You should carefully consider whether trading or investing in cryptocurrencies and digital assets is appropriate for you in light of your financial condition, level of experience, and risk tolerance.</p>
+  <p>Key risks include but are not limited to:</p>
+  <ul>
+    <li><strong>Total loss of capital:</strong> you could lose your entire investment. The value of cryptocurrencies and digital assets can fluctuate dramatically and may drop to zero. Never invest more than you can afford to lose completely.</li>
+    <li><strong>Extreme volatility:</strong> cryptocurrency markets are highly volatile. Prices can rise or fall by significant percentages within minutes, hours, or days. Historical price movements are unpredictable and do not follow traditional market patterns.</li>
+    <li><strong>Market manipulation:</strong> cryptocurrency markets may be subject to manipulation, pump-and-dump schemes, and other fraudulent activities that can result in sudden and severe losses.</li>
+    <li><strong>Liquidity risk:</strong> some cryptocurrencies and digital assets may have limited liquidity, making it difficult or impossible to sell your holdings at a desired price or at all.</li>
+    <li><strong>Regulatory risk:</strong> the regulatory environment for cryptocurrencies is evolving rapidly. Changes in laws, regulations, or government policies could adversely affect the value, use, or legality of certain cryptocurrencies and digital assets.</li>
+    <li><strong>Technology risk:</strong> blockchain technology and cryptocurrency platforms may be vulnerable to hacking, technical failures, software bugs, smart contract vulnerabilities, and other technological risks that could result in the loss of your assets.</li>
+    <li><strong>Counterparty risk:</strong> exchanges, custodians, and other third parties that hold or facilitate transactions in cryptocurrencies may become insolvent, suffer security breaches, or otherwise fail to perform their obligations.</li>
+    <li><strong>Irreversibility:</strong> cryptocurrency transactions are generally irreversible. If you send assets to the wrong address or fall victim to fraud, recovery may be impossible.</li>
+  </ul>
+  <p><strong>Past performance is not indicative of future results.</strong> Any historical returns, expected returns, or probability projections referenced on this Website may not reflect actual future performance. Actual results will vary and may differ materially from those expressed or implied.</p>
+
+  <h2>4. Earnings Disclaimer</h2>
+  <p>Any income figures, earnings examples, revenue data, or financial results displayed on this Website are provided for illustrative purposes only and should not be considered as a promise, guarantee, or representation of your potential earnings or income. Individual results will vary significantly based on numerous factors, including but not limited to market conditions, the amount of capital invested, the timing of investments, individual skill and experience, and the amount of time and effort dedicated.</p>
+  <p>There is <strong>no guarantee</strong> that you will earn any income or achieve any specific financial result by using the products or services described on this Website, by participating in the Aurum Foundation ecosystem, or by engaging in team-building activities. The fact that other individuals may have achieved certain results does not mean that you will achieve similar results. Many participants in cryptocurrency trading and network-based business models do not earn significant income, and some may lose money.</p>
+  <p>Any testimonials or success stories shared on this Website represent the experiences of specific individuals during specific time periods and are not intended to represent or guarantee that anyone will achieve the same or similar results. Testimonials are not necessarily representative of all participants and should be viewed as exceptional outcomes, not typical experiences.</p>
+  <p>You accept full responsibility for your own financial decisions and outcomes. thefutureofmoney.ai, its owner, and its affiliates shall not be held liable for any financial losses or damages resulting from your reliance on any information presented on this Website.</p>
+
+  <h2>5. Independent Partner Disclosure</h2>
+  <p>thefutureofmoney.ai is an <strong>independent partner</strong> of the Aurum Foundation. We are <strong>not</strong> the Aurum Foundation, nor are we owned, operated, or controlled by the Aurum Foundation. We are not employees, officers, directors, or agents of the Aurum Foundation.</p>
+  <p>The views, opinions, and statements expressed on this Website are solely those of thefutureofmoney.ai (Andrej Sekirnik s.p.) and do not necessarily reflect the official positions, views, or policies of the Aurum Foundation. The Aurum Foundation has not reviewed, approved, or endorsed the content on this Website unless explicitly stated otherwise.</p>
+  <p>As an independent partner, we may receive commissions, referral fees, or other compensation when you sign up for, purchase, or use products and services offered by the Aurum Foundation through our referral links or partner channels. This compensation may influence the content we produce and the products we highlight on this Website. We endeavour to provide honest, accurate, and balanced information, but you should be aware of this potential conflict of interest when evaluating the information presented.</p>
+
+  <h2>6. Third-Party Products and Services</h2>
+  <p>This Website describes, reviews, and provides information about products, services, and trading platforms offered by the Aurum Foundation and potentially other third-party providers. We do not own, operate, control, or manage any of these products, services, or platforms. We do not have the ability to modify, influence, or guarantee the performance, functionality, security, or availability of any third-party product or service.</p>
+  <p>The descriptions, features, terms, and conditions of any third-party products or services mentioned on this Website are based on publicly available information and our understanding at the time of writing. These may change without notice, and we cannot guarantee that the information presented is current, complete, or accurate at the time you read it. You should always verify all details directly with the relevant product or service provider before making any decisions.</p>
+  <p>thefutureofmoney.ai assumes no responsibility or liability for the acts, omissions, products, services, or policies of any third party, including the Aurum Foundation, its trading platforms, AI trading systems, or any other associated services.</p>
+
+  <h2>7. AI Trading Disclaimer</h2>
+  <p>This Website may describe or reference AI-managed trading systems, algorithmic trading strategies, automated trading bots, or similar technology-based trading solutions. It is essential that you understand the following:</p>
+  <ul>
+    <li><strong>No guarantee of positive returns:</strong> AI-managed trading systems, no matter how sophisticated, cannot guarantee positive returns or protect against losses. Algorithms operate based on historical data, patterns, and programmed parameters that may not account for unprecedented market events, black swan events, or sudden shifts in market conditions.</li>
+    <li><strong>Algorithm limitations:</strong> AI and machine learning models can fail, produce errors, or make suboptimal decisions. Models may overfit to historical data, misinterpret market signals, or fail to adapt to rapidly changing conditions. Technical glitches, software bugs, connectivity issues, and data feed errors can all impact trading performance.</li>
+    <li><strong>Market volatility:</strong> cryptocurrency markets are among the most volatile financial markets in existence. Even the most advanced AI systems cannot predict or fully account for extreme market volatility, flash crashes, exchange outages, or cascading liquidation events.</li>
+    <li><strong>Past performance caveat:</strong> any historical performance data, backtesting results, or simulated returns presented in connection with AI trading systems are not reliable indicators of future performance. Real-world trading results will differ from backtested or simulated results due to slippage, fees, liquidity constraints, and other factors.</li>
+    <li><strong>Capital at risk:</strong> all capital allocated to AI-managed trading is at risk. You should only allocate capital that you can afford to lose entirely without impacting your financial wellbeing or standard of living.</li>
+  </ul>
+
+  <h2>8. No Guarantees</h2>
+  <p>thefutureofmoney.ai makes <strong>no warranties or representations</strong>, express or implied, regarding the accuracy, completeness, reliability, suitability, or availability of the information, products, services, or related materials contained on this Website for any purpose. Any reliance you place on such information is strictly at your own risk.</p>
+  <p>We strive to keep the information on this Website current and accurate, but we make no guarantees that the content is free from errors, omissions, or outdated information. Market conditions, product features, regulatory frameworks, and other factors can change rapidly, and we may not be able to update all content in real time.</p>
+  <p>To the maximum extent permitted by applicable law, we disclaim all warranties, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+
+  <h2>9. External Links Disclaimer</h2>
+  <p>This Website may contain links to external websites, platforms, and resources that are not owned, operated, or controlled by thefutureofmoney.ai. These links are provided for your convenience and informational purposes only. We do not endorse, verify, or take responsibility for the content, accuracy, privacy policies, practices, or views of any linked third-party websites.</p>
+  <p>We have no control over the nature, content, or availability of external sites. The inclusion of any link does not imply a recommendation or endorsement of the views expressed within the linked website. You access external websites entirely at your own risk and should review their terms of service and privacy policies before providing any personal information or engaging in any transactions.</p>
+
+  <h2>10. Regulatory Notice</h2>
+  <p>Cryptocurrency regulations vary significantly by country, state, and jurisdiction. The legal status of cryptocurrencies, digital assets, and related activities (including trading, investing, and network participation) may be unclear, restricted, or prohibited in certain jurisdictions.</p>
+  <p>It is <strong>your sole responsibility</strong> to determine whether your participation in any cryptocurrency-related activity described on this Website is lawful in your jurisdiction. You are responsible for understanding and complying with all applicable local, national, and international laws, regulations, and tax obligations relating to cryptocurrency ownership, trading, income, and capital gains.</p>
+  <p>thefutureofmoney.ai does not provide legal or tax advice. We do not represent or warrant that the products, services, or activities described on this Website are compliant with the laws of your jurisdiction. If you are uncertain about the legality of any cryptocurrency-related activity in your jurisdiction, you should seek advice from a qualified legal professional before proceeding.</p>
+  <p>This Website is not directed at or intended for residents of any jurisdiction where the distribution of such information or the use of such products and services would be contrary to local law or regulation.</p>
+
+  <h2>11. Limitation of Liability</h2>
+  <p>To the fullest extent permitted by applicable law, thefutureofmoney.ai (Andrej Sekirnik s.p.), its owner, employees, partners, affiliates, and agents shall not be held liable for any direct, indirect, incidental, special, consequential, or punitive damages, including but not limited to:</p>
+  <ul>
+    <li>Loss of profits, revenue, data, or business opportunities.</li>
+    <li>Financial losses arising from trading, investing, or any other activity undertaken based on information found on this Website.</li>
+    <li>Losses arising from the use of, or inability to use, any product or service described on this Website, including those offered by the Aurum Foundation or other third parties.</li>
+    <li>Losses arising from reliance on any content, opinion, or statement published on this Website.</li>
+    <li>Losses resulting from unauthorised access to, or alteration of, your transmissions or data.</li>
+    <li>Any other matter relating to this Website or the information contained herein.</li>
+  </ul>
+  <p>This limitation of liability applies regardless of the legal theory on which the claim is based, whether in contract, tort (including negligence), strict liability, or otherwise, even if thefutureofmoney.ai has been advised of the possibility of such damages.</p>
+  <p>In jurisdictions that do not allow the exclusion or limitation of liability for consequential or incidental damages, our liability shall be limited to the maximum extent permitted by law.</p>
+
+  <h2>12. Contact Information</h2>
+  <p>If you have any questions, concerns, or requests regarding this Disclaimer or any other aspect of our Website, please contact us:</p>
+  <p><strong>thefutureofmoney.ai</strong> (Andrej Sekirnik s.p.)<br>
+  Prvomajska ulica 35<br>
+  3250 Rogaska Slatina<br>
+  Slovenia</p>
+  <p>Email: <a href="mailto:office@thefutureofmoney.ai">office@thefutureofmoney.ai</a></p>
+  <p>We reserve the right to update or modify this Disclaimer at any time without prior notice. Changes become effective immediately upon publication on this Website. We encourage you to review this Disclaimer periodically. Your continued use of this Website after any changes to this Disclaimer constitutes your acceptance of those changes.</p>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-l">&copy; 2026 thefutureofmoney.ai &middot; Independent Aurum Foundation Partner &middot; All rights reserved</div>
+  <div class="footer-r">
+    <a href="mailto:office@thefutureofmoney.ai">office@thefutureofmoney.ai</a>
+    <a href="blog.html">Blog</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="disclaimer.html">Disclaimer</a>
+  </div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-inner">
+    <div class="cookie-text">This website uses cookies to improve your experience. By clicking "Accept", you agree to our <a href="privacy.html">Privacy Policy</a>.</div>
+    <div class="cookie-btns">
+      <button class="cookie-accept" onclick="acceptCookies()">Accept</button>
+      <button class="cookie-decline" onclick="declineCookies()">Decline</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Theme toggle
+  function applyTheme(dark) {
+    document.documentElement.classList.toggle('dark', dark);
+    document.querySelector('.icon-sun').style.display = dark ? 'none' : 'block';
+    document.querySelector('.icon-moon').style.display = dark ? 'block' : 'none';
+  }
+  function toggleTheme() {
+    const isDark = !document.documentElement.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    applyTheme(isDark);
+  }
+  (function() {
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(saved ? saved === 'dark' : prefersDark);
+  })();
+
+  // Mobile menu
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const isOpen = menu.classList.toggle('open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  // Cookie banner
+  (function() {
+    if (!localStorage.getItem('cookie_consent')) {
+      document.getElementById('cookieBanner').classList.add('show');
+    }
+  })();
+  function acceptCookies() {
+    localStorage.setItem('cookie_consent', 'accepted');
+    document.getElementById('cookieBanner').classList.remove('show');
+  }
+  function declineCookies() {
+    localStorage.setItem('cookie_consent', 'declined');
+    document.getElementById('cookieBanner').classList.remove('show');
+  }
+</script>
+
+</body>
+</html>

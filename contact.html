@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us &middot; thefutureofmoney.ai</title>
+  <meta name="description" content="Get in touch with thefutureofmoney.ai — ask questions about AI crypto trading, team building, or the Aurum Foundation ecosystem.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.thefutureofmoney.ai/contact.html">
+  <meta property="og:title" content="Contact Us — thefutureofmoney.ai">
+  <meta property="og:description" content="Reach out with questions about AI-managed crypto trading or team building opportunities.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.thefutureofmoney.ai/contact.html">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --cream:   #FAFAF7;
+      --cream-2: #F4F3EE;
+      --cream-3: #ECEAE2;
+      --navy:    #0F1F3D;
+      --navy-2:  #1A3260;
+      --gold:    #B8933F;
+      --gold-lt: #D4AE62;
+      --text:    #1A1A1A;
+      --text-2:  #4A4A4A;
+      --text-3:  #8A8A8A;
+      --border:  #E2E0D8;
+      --border-2:#D0CEC4;
+      --card-bg: #fff;
+      --nav-bg:  rgba(250,250,247,0.93);
+      --footer-bg: #0A1528;
+      --input-bg: #fff;
+    }
+
+    html.dark {
+      --cream:   #0F172A;
+      --cream-2: #1E293B;
+      --cream-3: #334155;
+      --navy:    #F1F5F9;
+      --navy-2:  #E2E8F0;
+      --gold:    #D4AE62;
+      --gold-lt: #E8C97A;
+      --text:    #F1F5F9;
+      --text-2:  #CBD5E1;
+      --text-3:  #94A3B8;
+      --border:  #334155;
+      --border-2:#475569;
+      --card-bg: #1E293B;
+      --nav-bg:  rgba(15,23,42,0.93);
+      --footer-bg: #020617;
+      --input-bg: #1E293B;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--nav-bg); backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5vw; height: 56px;
+    }
+    .nav-l { display: flex; align-items: center; gap: 1rem; }
+    .nav-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); }
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; font-weight: 600; color: var(--navy);
+      text-decoration: none;
+    }
+    .nav-sep { color: var(--text-3); font-weight: 300; }
+    .nav-tag {
+      font-family: 'DM Mono', monospace; font-size: 0.52rem;
+      letter-spacing: 0.14em; color: var(--text-3); text-transform: uppercase;
+    }
+    .nav-r { display: flex; align-items: center; gap: 1rem; }
+    .nav-link {
+      font-family: 'DM Mono', monospace; font-size: 0.54rem;
+      letter-spacing: 0.12em; color: var(--text-3); text-decoration: none;
+      text-transform: uppercase; transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--gold); }
+    .nav-link.active { color: var(--gold); }
+    .dark-toggle {
+      width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--border);
+      background: var(--card-bg); cursor: pointer; display: flex;
+      align-items: center; justify-content: center; transition: all 0.2s;
+    }
+    .dark-toggle:hover { border-color: var(--gold); }
+    .dark-toggle svg { width: 16px; height: 16px; color: var(--text-3); }
+    .wa-nav {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--gold); color: #fff; border: none; border-radius: 6px;
+      padding: 0.45rem 1.1rem; font-family: 'DM Mono', monospace;
+      font-size: 0.54rem; letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none; cursor: pointer; transition: background 0.2s;
+    }
+    .wa-nav:hover { background: var(--gold-lt); }
+    .wa-nav svg { width: 14px; height: 14px; fill: #fff; }
+
+    /* HERO */
+    .contact-hero {
+      padding: 10rem 5vw 4rem; text-align: center;
+      background: var(--cream); position: relative;
+    }
+    .contact-hero::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 1px; background: var(--border);
+    }
+    .contact-kicker {
+      font-family: 'DM Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .contact-hero h1 {
+      font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600; color: var(--navy); margin-bottom: 1rem;
+    }
+    .contact-hero p {
+      max-width: 520px; margin: 0 auto; font-size: 1rem;
+      color: var(--text-2); line-height: 1.7;
+    }
+
+    /* FORM SECTION */
+    .contact-section {
+      padding: 4rem 5vw 6rem; background: var(--cream-2);
+    }
+    .contact-grid {
+      max-width: 900px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.4fr; gap: 3rem;
+      align-items: start;
+    }
+
+    /* LEFT: INFO */
+    .contact-info h3 {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.4rem;
+      font-weight: 600; color: var(--navy); margin-bottom: 1.5rem;
+    }
+    .contact-item {
+      display: flex; align-items: flex-start; gap: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+    .contact-item-icon {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: rgba(184,147,63,0.1); display: flex;
+      align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .contact-item-icon svg { width: 16px; height: 16px; color: var(--gold); }
+    .contact-item-label {
+      font-family: 'DM Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.15em; color: var(--text-3); text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+    .contact-item-value {
+      font-size: 0.92rem; color: var(--navy);
+    }
+    .contact-item-value a {
+      color: var(--navy); text-decoration: none; transition: color 0.2s;
+    }
+    .contact-item-value a:hover { color: var(--gold); }
+
+    /* RIGHT: FORM */
+    .contact-form-card {
+      background: var(--card-bg); border: 1px solid var(--border);
+      border-radius: 12px; padding: 2.5rem;
+    }
+    .form-group { margin-bottom: 1.4rem; }
+    .form-group label {
+      display: block; font-family: 'DM Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.15em; color: var(--text-3); text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%; padding: 0.75rem 1rem; font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem; font-weight: 300; color: var(--text);
+      background: var(--input-bg); border: 1px solid var(--border);
+      border-radius: 8px; outline: none; transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--gold);
+    }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+    .form-group select { cursor: pointer; }
+    .form-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .form-submit {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--gold); color: #fff; border: none; border-radius: 8px;
+      padding: 0.85rem 2rem; font-family: 'DM Mono', monospace;
+      font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+      cursor: pointer; transition: background 0.2s, transform 0.15s;
+      width: 100%;  justify-content: center;
+    }
+    .form-submit:hover { background: var(--gold-lt); transform: translateY(-1px); }
+    .form-submit svg { width: 16px; height: 16px; fill: #fff; }
+
+    /* SUCCESS */
+    .form-success {
+      display: none; text-align: center; padding: 3rem 1.5rem;
+    }
+    .form-success.show { display: block; }
+    .form-success-icon {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: rgba(34,197,94,0.12); display: flex;
+      align-items: center; justify-content: center; margin: 0 auto 1.2rem;
+    }
+    .form-success-icon svg { width: 28px; height: 28px; color: #22C55E; }
+    .form-success h3 {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
+      font-weight: 600; color: var(--navy); margin-bottom: 0.5rem;
+    }
+    .form-success p {
+      font-size: 0.9rem; color: var(--text-2);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--footer-bg); padding: 1.5rem 5vw;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem; flex-wrap: wrap;
+    }
+    .footer-l { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); text-transform: uppercase; }
+    .footer-r a { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.5); text-decoration: none; margin-left: 1.5rem; transition: color 0.2s; }
+    .footer-r a:hover { color: var(--gold); }
+
+    /* RESPONSIVE */
+    @media (max-width: 700px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .nav-tag, .nav-sep { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-l">
+    <div class="nav-dot"></div>
+    <a href="index.html" class="nav-brand">thefutureofmoney.ai</a>
+    <span class="nav-sep">&middot;</span>
+    <span class="nav-tag">Aurum Foundation Partner</span>
+  </div>
+  <div class="nav-r">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="blog.html" class="nav-link">Blog</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
+    <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
+      <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+      <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+    </button>
+    <a href="https://wa.me/38641682838" class="wa-nav" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.511-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c-.001 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
+      Message me
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="contact-hero">
+  <div class="contact-kicker">Contact</div>
+  <h1>Let's Talk</h1>
+  <p>Have a question about AI-managed trading, team building, or the Aurum ecosystem? Send us a message and we'll get back to you shortly.</p>
+</section>
+
+<!-- FORM SECTION -->
+<section class="contact-section">
+  <div class="contact-grid">
+
+    <!-- LEFT: INFO -->
+    <div class="contact-info">
+      <h3>Get in Touch</h3>
+
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+        </div>
+        <div>
+          <div class="contact-item-label">Email</div>
+          <div class="contact-item-value"><a href="mailto:office@thefutureofmoney.ai">office@thefutureofmoney.ai</a></div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        </div>
+        <div>
+          <div class="contact-item-label">WhatsApp</div>
+          <div class="contact-item-value"><a href="https://wa.me/38641682838" target="_blank" rel="noopener">Message us directly</a></div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <div>
+          <div class="contact-item-label">Languages</div>
+          <div class="contact-item-value">English &middot; Slovenian &middot; German</div>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <div class="contact-item-label">Response Time</div>
+          <div class="contact-item-value">Usually within a few hours</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: FORM -->
+    <div class="contact-form-card">
+      <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required placeholder="John Doe">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="john@example.com">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="interest">I'm interested in</label>
+          <select id="interest" name="interest">
+            <option value="general">General inquiry</option>
+            <option value="investing">AI-managed investing</option>
+            <option value="team">Team building opportunity</option>
+            <option value="both">Both paths</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" required placeholder="Tell us what you'd like to know..."></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">
+          <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          Send Message
+        </button>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <div class="form-success-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>Message Sent!</h3>
+        <p>Thank you for reaching out. We'll get back to you shortly.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-l">&copy; 2026 thefutureofmoney.ai &middot; Independent Aurum Foundation Partner &middot; All rights reserved</div>
+  <div class="footer-r">
+    <a href="blog.html">Blog</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a href="disclaimer.html">Disclaimer</a>
+  </div>
+</footer>
+
+<script>
+  // Dark mode
+  const toggle = document.getElementById('darkToggle');
+  const moonIcon = document.getElementById('iconMoon');
+  const sunIcon = document.getElementById('iconSun');
+
+  function setDark(dark) {
+    document.documentElement.classList.toggle('dark', dark);
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+    moonIcon.style.display = dark ? 'none' : 'block';
+    sunIcon.style.display = dark ? 'block' : 'none';
+  }
+
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    setDark(true);
+  }
+
+  toggle.addEventListener('click', () => {
+    setDark(!document.documentElement.classList.contains('dark'));
+  });
+
+  // Form submission
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString()
+      });
+      form.style.display = 'none';
+      success.classList.add('show');
+    } catch (err) {
+      alert('Something went wrong. Please try again or contact us via email.');
+    }
+  });
+</script>
+
+</body>
+</html>
