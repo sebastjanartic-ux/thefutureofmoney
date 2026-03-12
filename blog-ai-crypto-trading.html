@@ -97,6 +97,21 @@
     }
     .nav-link:hover { color: var(--gold); }
     .nav-link.active { color: var(--navy); font-weight: 500; }
+    .nav-dropdown { position: relative; display: flex; align-items: center; }
+    .nav-dropdown-menu {
+      display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px;
+      padding: 0.5rem 0; min-width: 150px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      z-index: 110;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu a {
+      display: block; padding: 0.5rem 1.2rem;
+      font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.1em;
+      color: var(--text-2); text-transform: uppercase; text-decoration: none;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-dropdown-menu a:hover { color: var(--gold); background: var(--cream-2); }
     .nav-theme {
       background: none; border: 1px solid var(--border); border-radius: 50%;
       width: 38px; height: 38px; cursor: pointer;
@@ -148,11 +163,32 @@
       padding: 2rem 5vw;
     }
     .mobile-menu-link {
-      font-family: 'Cormorant Garamond', serif; font-size: 2rem;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.35rem;
       font-weight: 600; color: var(--navy); text-decoration: none;
+      padding: 0.6rem 0; border-bottom: 1px solid var(--border);
       transition: color 0.2s;
     }
     .mobile-menu-link:hover { color: var(--gold); }
+    .mobile-menu-group { display: flex; flex-direction: column; align-items: center; width: 100%; }
+    .mobile-menu-toggle { display: flex; align-items: center; gap: 0.4rem; cursor: pointer; }
+    .mobile-menu-toggle .mm-arrow {
+      font-size: 0.55rem; color: var(--text-3); transition: transform 0.3s;
+    }
+    .mobile-menu-group.open .mm-arrow { transform: rotate(180deg); }
+    .mobile-menu-subs {
+      display: flex; flex-direction: column; align-items: center;
+      max-height: 0; overflow: hidden; transition: max-height 0.35s ease;
+      width: 100%;
+    }
+    .mobile-menu-group.open .mobile-menu-subs { max-height: 200px; }
+    .mobile-menu-sub {
+      font-family: 'DM Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-3); text-decoration: none;
+      padding: 0.45rem 0 0.45rem 1.2rem; border-bottom: 1px solid var(--border);
+      transition: color 0.2s;
+    }
+    .mobile-menu-sub:hover { color: var(--gold); }
     .mobile-menu-cta {
       display: inline-flex; align-items: center; gap: 10px;
       background: var(--gold); color: #fff;
@@ -199,11 +235,12 @@
     /* FOOTER */
     footer {
       background: var(--footer-bg); padding: 2rem 5vw;
-      display: flex; justify-content: space-between; align-items: center;
-      gap: 1rem; flex-wrap: wrap;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 1rem; text-align: center;
     }
-    .footer-l { font-family: 'DM Mono', monospace; font-size: 0.56rem; letter-spacing: 0.12em; color: rgba(255,255,255,0.45); text-transform: uppercase; }
-    .footer-r a { font-family: 'DM Mono', monospace; font-size: 0.56rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.38); text-decoration: none; margin-left: 1.5rem; transition: color 0.2s; }
+    .footer-l { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); text-transform: uppercase; line-height: 1.6; }
+    .footer-r { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem 1.5rem; }
+    .footer-r a { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
     .footer-r a:hover { color: var(--gold); }
 
     /* COOKIE */
@@ -225,6 +262,7 @@
     @media (max-width: 900px) {
       .nav-tag { display: none; }
       .nav-link { display: none; }
+      .nav-dropdown { display: none; }
       .nav-cta { display: none; }
       .hamburger { display: flex; }
     }
@@ -241,6 +279,22 @@
   </a>
   <div class="nav-right">
     <a href="index.html" class="nav-link">Home</a>
+    <div class="nav-dropdown">
+      <a href="index.html#about" class="nav-link">About &#9662;</a>
+      <div class="nav-dropdown-menu">
+        <a href="index.html#about">Who I Am</a>
+        <a href="index.html#leadership">Leadership</a>
+        <a href="index.html#platform">Platform</a>
+      </div>
+    </div>
+    <a href="index.html#products" class="nav-link">Products</a>
+    <div class="nav-dropdown">
+      <a href="index.html#presentation" class="nav-link">Presentation &#9662;</a>
+      <div class="nav-dropdown-menu">
+        <a href="index.html#presentation">Video</a>
+        <a href="index.html#podcast">Podcast</a>
+      </div>
+    </div>
     <a href="blog.html" class="nav-link active">Blog</a>
     <a href="contact.html" class="nav-link">Contact</a>
     <button class="nav-theme" onclick="toggleTheme()" aria-label="Toggle dark mode">
@@ -263,11 +317,24 @@
     <button class="mobile-menu-close" onclick="toggleMenu()">&times;</button>
   </div>
   <div class="mobile-menu-body">
-    <a href="index.html" class="mobile-menu-link">Home</a>
-    <a href="index.html#paths" class="mobile-menu-link">Two Paths</a>
-    <a href="index.html#products" class="mobile-menu-link">Products</a>
-    <a href="index.html#about" class="mobile-menu-link">About</a>
-    <a href="blog.html" class="mobile-menu-link" style="color: var(--gold);">Blog</a>
+    <a href="index.html" class="mobile-menu-link" onclick="toggleMenu()">Home</a>
+    <div class="mobile-menu-group">
+      <span class="mobile-menu-link mobile-menu-toggle" onclick="this.parentElement.classList.toggle('open')">About <span class="mm-arrow">&#9660;</span></span>
+      <div class="mobile-menu-subs">
+        <a href="index.html#about" class="mobile-menu-sub" onclick="toggleMenu()">Who I Am</a>
+        <a href="index.html#leadership" class="mobile-menu-sub" onclick="toggleMenu()">Leadership</a>
+        <a href="index.html#platform" class="mobile-menu-sub" onclick="toggleMenu()">Platform</a>
+      </div>
+    </div>
+    <a href="index.html#products" class="mobile-menu-link" onclick="toggleMenu()">Products</a>
+    <div class="mobile-menu-group">
+      <span class="mobile-menu-link mobile-menu-toggle" onclick="this.parentElement.classList.toggle('open')">Presentation <span class="mm-arrow">&#9660;</span></span>
+      <div class="mobile-menu-subs">
+        <a href="index.html#presentation" class="mobile-menu-sub" onclick="toggleMenu()">Video</a>
+        <a href="index.html#podcast" class="mobile-menu-sub" onclick="toggleMenu()">Podcast</a>
+      </div>
+    </div>
+    <a href="blog.html" class="mobile-menu-link">Blog</a>
     <a href="contact.html" class="mobile-menu-link">Contact</a>
     <a href="https://wa.me/38641682838" class="mobile-menu-cta">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.511-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c-.001 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413"/></svg>
@@ -373,8 +440,6 @@
 <footer>
   <div class="footer-l">&copy; 2026 thefutureofmoney.ai &middot; Independent Aurum Foundation Partner &middot; All rights reserved</div>
   <div class="footer-r">
-    <a href="mailto:office@thefutureofmoney.ai">office@thefutureofmoney.ai</a>
-    <a href="index.html">Home</a>
     <a href="blog.html">Blog</a>
     <a href="privacy.html">Privacy Policy</a>
     <a href="terms.html">Terms of Use</a>
@@ -407,8 +472,7 @@
   }
   (function() {
     const saved = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    applyTheme(saved ? saved === 'dark' : prefersDark);
+    applyTheme(saved === 'dark');
   })();
 
   // Mobile menu

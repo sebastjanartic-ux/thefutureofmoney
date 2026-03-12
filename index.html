@@ -49,7 +49,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
     :root {
       --cream:   #FAFAF7;
@@ -131,6 +131,21 @@
     }
     .nav-link:hover { color: var(--gold); }
     .nav-link.active { color: var(--navy); font-weight: 500; }
+    .nav-dropdown { position: relative; display: flex; align-items: center; }
+    .nav-dropdown-menu {
+      display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px;
+      padding: 0.5rem 0; min-width: 150px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      z-index: 110;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { display: block; }
+    .nav-dropdown-menu a {
+      display: block; padding: 0.5rem 1.2rem;
+      font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.1em;
+      color: var(--text-2); text-transform: uppercase; text-decoration: none;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-dropdown-menu a:hover { color: var(--gold); background: var(--cream-2); }
     .nav-theme {
       background: none; border: 1px solid var(--border); border-radius: 50%;
       width: 38px; height: 38px; cursor: pointer;
@@ -186,11 +201,32 @@
       padding: 2rem 5vw;
     }
     .mobile-menu-link {
-      font-family: 'Cormorant Garamond', serif; font-size: 2rem;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.35rem;
       font-weight: 600; color: var(--navy); text-decoration: none;
+      padding: 0.6rem 0; border-bottom: 1px solid var(--border);
       transition: color 0.2s;
     }
     .mobile-menu-link:hover { color: var(--gold); }
+    .mobile-menu-group { display: flex; flex-direction: column; align-items: center; width: 100%; }
+    .mobile-menu-toggle { display: flex; align-items: center; gap: 0.4rem; cursor: pointer; }
+    .mobile-menu-toggle .mm-arrow {
+      font-size: 0.55rem; color: var(--text-3); transition: transform 0.3s;
+    }
+    .mobile-menu-group.open .mm-arrow { transform: rotate(180deg); }
+    .mobile-menu-subs {
+      display: flex; flex-direction: column; align-items: center;
+      max-height: 0; overflow: hidden; transition: max-height 0.35s ease;
+      width: 100%;
+    }
+    .mobile-menu-group.open .mobile-menu-subs { max-height: 200px; }
+    .mobile-menu-sub {
+      font-family: 'DM Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-3); text-decoration: none;
+      padding: 0.45rem 0 0.45rem 1.2rem; border-bottom: 1px solid var(--border);
+      transition: color 0.2s;
+    }
+    .mobile-menu-sub:hover { color: var(--gold); }
     .mobile-menu-cta {
       display: inline-flex; align-items: center; gap: 10px;
       background: var(--gold); color: #fff;
@@ -641,6 +677,7 @@
       .hero-btns { flex-direction: column; align-items: center; }
       .nav-tag { display: none; }
       .nav-link { display: none; }
+      .nav-dropdown { display: none; }
       .nav-cta { display: none; }
       .hamburger { display: flex; }
       .leader-stats { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
@@ -662,6 +699,22 @@
   </a>
   <div class="nav-right">
     <a href="index.html" class="nav-link active">Home</a>
+    <div class="nav-dropdown">
+      <a href="#about" class="nav-link">About ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="#about">Who I Am</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#platform">Platform</a>
+      </div>
+    </div>
+    <a href="#products" class="nav-link">Products</a>
+    <div class="nav-dropdown">
+      <a href="#presentation" class="nav-link">Presentation ▾</a>
+      <div class="nav-dropdown-menu">
+        <a href="#presentation">Video</a>
+        <a href="#podcast">Podcast</a>
+      </div>
+    </div>
     <a href="blog.html" class="nav-link">Blog</a>
     <a href="contact.html" class="nav-link">Contact</a>
     <button class="nav-theme" onclick="toggleTheme()" aria-label="Toggle dark mode">
@@ -684,9 +737,23 @@
     <button class="mobile-menu-close" onclick="toggleMenu()">&times;</button>
   </div>
   <div class="mobile-menu-body">
-    <a href="#paths" class="mobile-menu-link" onclick="toggleMenu()">Two Paths</a>
-    <a href="#products" class="mobile-menu-link" onclick="toggleMenu()">Products</a>
-    <a href="#about" class="mobile-menu-link" onclick="toggleMenu()">About</a>
+    <a href="index.html" class="mobile-menu-link" onclick="toggleMenu()">Home</a>
+    <div class="mobile-menu-group">
+      <span class="mobile-menu-link mobile-menu-toggle" onclick="this.parentElement.classList.toggle('open')">About <span class="mm-arrow">&#9660;</span></span>
+      <div class="mobile-menu-subs">
+        <a href="index.html#about" class="mobile-menu-sub" onclick="toggleMenu()">Who I Am</a>
+        <a href="index.html#leadership" class="mobile-menu-sub" onclick="toggleMenu()">Leadership</a>
+        <a href="index.html#platform" class="mobile-menu-sub" onclick="toggleMenu()">Platform</a>
+      </div>
+    </div>
+    <a href="index.html#products" class="mobile-menu-link" onclick="toggleMenu()">Products</a>
+    <div class="mobile-menu-group">
+      <span class="mobile-menu-link mobile-menu-toggle" onclick="this.parentElement.classList.toggle('open')">Presentation <span class="mm-arrow">&#9660;</span></span>
+      <div class="mobile-menu-subs">
+        <a href="index.html#presentation" class="mobile-menu-sub" onclick="toggleMenu()">Video</a>
+        <a href="index.html#podcast" class="mobile-menu-sub" onclick="toggleMenu()">Podcast</a>
+      </div>
+    </div>
     <a href="blog.html" class="mobile-menu-link">Blog</a>
     <a href="contact.html" class="mobile-menu-link">Contact</a>
     <a href="https://wa.me/38641682838" class="mobile-menu-cta">
@@ -826,7 +893,7 @@
 </section>
 
 <!-- LEADERSHIP -->
-<section class="leader-section">
+<section class="leader-section" id="leadership">
   <div class="s-inner">
     <div class="s-label reveal">Leadership</div>
     <h2 class="s-title reveal d2">CEO <em>Bryan Benson</em></h2>
@@ -850,7 +917,7 @@
 </section>
 
 <!-- AURUM PLATFORM -->
-<section class="aurum-section">
+<section class="aurum-section" id="platform">
   <div class="s-inner">
     <div class="s-label reveal">The Platform</div>
     <h2 class="s-title reveal d2">About <em>Aurum Foundation</em></h2>
@@ -886,6 +953,7 @@
       <iframe src="https://iframe.mediadelivery.net/embed/615421/9eae5363-556d-46df-bec2-da34a0572aa6?autoplay=false&loop=false&muted=false&preload=true" loading="lazy" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
     </div>
 
+    <div id="podcast"></div>
     <div class="podcast-section-head reveal d3">
       <div class="podcast-icon-wrap">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
@@ -992,8 +1060,7 @@
   }
   (function() {
     const saved = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    applyTheme(saved ? saved === 'dark' : prefersDark);
+    applyTheme(saved === 'dark');
   })();
 
   // Mobile menu
