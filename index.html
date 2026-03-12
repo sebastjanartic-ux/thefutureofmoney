@@ -91,7 +91,7 @@
       --green:   #4ADE80;
       --card-bg: #1E293B;
       --nav-bg:  rgba(15,23,42,0.93);
-      --cta-bg:  #1E293B;
+      --cta-bg:  #0F1F3D;
       --cta-text: #F1F5F9;
       --cta-body: rgba(241,245,249,0.5);
       --cta-note: rgba(241,245,249,0.25);
@@ -241,6 +241,9 @@
       background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
       background-size: 60px 60px; opacity: 0.45;
     }
+    .hero-pacman {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    }
     .hero-inner { max-width: 800px; position: relative; z-index: 1; }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 10px;
@@ -274,16 +277,18 @@
       padding: 1rem 2.4rem; border-radius: 5px; text-decoration: none;
       transition: all 0.25s;
     }
-    .btn-navy:hover { background: var(--gold-lt); transform: translateY(-2px); }
+    .btn-navy:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(184,147,63,0.35); }
+    .btn-navy:active { transform: translateY(0); }
     .btn-navy svg { width: 18px; height: 18px; fill: #fff; }
     .btn-ghost {
       display: inline-flex; align-items: center; gap: 8px;
-      background: transparent; color: var(--navy);
+      background: var(--card-bg); color: var(--navy);
       font-size: 0.88rem; font-weight: 500;
       padding: 1rem 2.4rem; border-radius: 5px; text-decoration: none;
-      border: 1px solid var(--border-2); transition: all 0.25s;
+      border: 1.5px solid var(--navy); transition: all 0.25s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
     }
-    .btn-ghost:hover { border-color: var(--navy); }
+    .btn-ghost:hover { background: var(--navy); color: var(--cream); border-color: var(--navy); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
 
     /* HERO STATS */
     .hero-stats {
@@ -554,6 +559,17 @@
       background: var(--cta-bg); padding: 7rem 5vw; text-align: center;
       position: relative; overflow: hidden;
     }
+    .cta-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    html.dark .cta-grid {
+      background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    }
+    .cta-pacman {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    }
     .cta-glow {
       position: absolute; top: -150px; left: 50%; transform: translateX(-50%);
       width: 500px; height: 500px;
@@ -587,12 +603,13 @@
 
     /* FOOTER */
     footer {
-      background: var(--footer-bg); padding: 1.5rem 5vw;
-      display: flex; justify-content: space-between; align-items: center;
-      gap: 1rem; flex-wrap: wrap;
+      background: var(--footer-bg); padding: 2rem 5vw;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 1rem; text-align: center;
     }
-    .footer-l { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); text-transform: uppercase; }
-    .footer-r a { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.5); text-decoration: none; margin-left: 1.5rem; transition: color 0.2s; }
+    .footer-l { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); text-transform: uppercase; line-height: 1.6; }
+    .footer-r { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem 1.5rem; }
+    .footer-r a { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
     .footer-r a:hover { color: var(--gold); }
 
     /* COOKIE */
@@ -683,6 +700,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-grid"></div>
+  <canvas class="hero-pacman" id="pacmanCanvas"></canvas>
   <div class="hero-inner">
     <div class="hero-badge reveal">Independent Partner &middot; Aurum Foundation</div>
     <h1 class="reveal d2">The Future<br>of <em>Money</em></h1>
@@ -697,10 +715,10 @@
       <a href="#presentation" class="btn-ghost">&#9654; Watch Presentation</a>
     </div>
     <div class="hero-stats">
-      <div class="hstat"><span class="hstat-n">200+</span><span class="hstat-l">Team Members</span></div>
-      <div class="hstat"><span class="hstat-n">$230K</span><span class="hstat-l">USDT Managed</span></div>
-      <div class="hstat"><span class="hstat-n">6</span><span class="hstat-l">Countries Active</span></div>
-      <div class="hstat"><span class="hstat-n">50K+</span><span class="hstat-l">Aurum Global Users</span></div>
+      <div class="hstat"><span class="hstat-n" data-target="200" data-prefix="" data-suffix="+">0</span><span class="hstat-l">Team Members</span></div>
+      <div class="hstat"><span class="hstat-n" data-target="230" data-prefix="$" data-suffix="K">0</span><span class="hstat-l">USDT Managed</span></div>
+      <div class="hstat"><span class="hstat-n" data-target="6" data-prefix="" data-suffix="">0</span><span class="hstat-l">Countries Active</span></div>
+      <div class="hstat"><span class="hstat-n" data-target="50" data-prefix="" data-suffix="K+">0</span><span class="hstat-l">Aurum Global Users</span></div>
     </div>
   </div>
 </section>
@@ -924,6 +942,8 @@
 
 <!-- CTA -->
 <section class="cta-section">
+  <div class="cta-grid"></div>
+  <canvas class="cta-pacman" id="ctaPacmanCanvas"></canvas>
   <div class="cta-glow"></div>
   <div class="cta-inner">
     <div class="cta-kicker reveal">Ready to explore?</div>
@@ -1033,6 +1053,147 @@
       const pct = (e.clientX - rect.left) / rect.width;
       audio.currentTime = pct * audio.duration;
     });
+  })();
+
+  // Pac-man impulses — reusable for any section with a grid
+  function initPacman(canvasId, maxDots) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const section = canvas.closest('section');
+    const gap = 60;
+    let w, h, cols, rows;
+    let dots = [];
+
+    function resize() {
+      w = section.offsetWidth; h = section.offsetHeight;
+      canvas.width = w; canvas.height = h;
+      cols = Math.floor(w / gap) + 1;
+      rows = Math.floor(h / gap) + 1;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    function spawnDot() {
+      dots.push({
+        x: Math.floor(Math.random() * cols) * gap,
+        y: Math.floor(Math.random() * rows) * gap,
+        col: 0, row: 0,
+        dir: Math.floor(Math.random() * 4),
+        speed: 0.6 + Math.random() * 0.8,
+        life: 600 + Math.floor(Math.random() * 400),
+        trail: [],
+        size: 2.5 + Math.random() * 1.5
+      });
+      const d = dots[dots.length - 1];
+      d.col = Math.round(d.x / gap);
+      d.row = Math.round(d.y / gap);
+    }
+
+    const dirs = [[1,0],[0,1],[-1,0],[0,-1]];
+    const goldC = 'rgba(184,147,63,';
+
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      while (dots.length < maxDots) spawnDot();
+
+      for (let i = dots.length - 1; i >= 0; i--) {
+        const d = dots[i];
+        d.life--;
+        if (d.life <= 0) { dots.splice(i, 1); continue; }
+
+        d.x += dirs[d.dir][0] * d.speed;
+        d.y += dirs[d.dir][1] * d.speed;
+        d.trail.push({ x: d.x, y: d.y });
+        if (d.trail.length > 40) d.trail.shift();
+
+        const nearCol = Math.round(d.x / gap);
+        const nearRow = Math.round(d.y / gap);
+        const distToNode = Math.abs(d.x - nearCol * gap) + Math.abs(d.y - nearRow * gap);
+
+        if (distToNode < d.speed + 0.5 && (nearCol !== d.col || nearRow !== d.row)) {
+          d.x = nearCol * gap; d.y = nearRow * gap;
+          d.col = nearCol; d.row = nearRow;
+          const reverse = (d.dir + 2) % 4;
+          const options = [];
+          for (let dd = 0; dd < 4; dd++) {
+            if (dd === reverse) continue;
+            const nc = nearCol + dirs[dd][0], nr = nearRow + dirs[dd][1];
+            if (nc >= 0 && nc < cols && nr >= 0 && nr < rows) options.push(dd);
+          }
+          if (options.length === 0) {
+            const nc = nearCol + dirs[reverse][0], nr = nearRow + dirs[reverse][1];
+            if (nc >= 0 && nc < cols && nr >= 0 && nr < rows) options.push(reverse);
+          }
+          if (options.length > 0) d.dir = options[Math.floor(Math.random() * options.length)];
+        }
+
+        if (d.x < -gap || d.x > w + gap || d.y < -gap || d.y > h + gap) {
+          dots.splice(i, 1); continue;
+        }
+
+        // Trail
+        for (let t = 0; t < d.trail.length; t++) {
+          const alpha = (t / d.trail.length) * 0.3;
+          const sz = d.size * (t / d.trail.length) * 0.6;
+          ctx.beginPath();
+          ctx.arc(d.trail[t].x, d.trail[t].y, sz, 0, Math.PI * 2);
+          ctx.fillStyle = goldC + alpha + ')';
+          ctx.fill();
+        }
+        // Glow
+        const grad = ctx.createRadialGradient(d.x, d.y, 0, d.x, d.y, d.size * 5);
+        grad.addColorStop(0, goldC + '0.3)');
+        grad.addColorStop(1, goldC + '0)');
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, d.size * 5, 0, Math.PI * 2);
+        ctx.fillStyle = grad;
+        ctx.fill();
+        // Core
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, d.size, 0, Math.PI * 2);
+        ctx.fillStyle = goldC + '0.8)';
+        ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  }
+
+  // Init both sections
+  initPacman('pacmanCanvas', 12);
+  initPacman('ctaPacmanCanvas', 8);
+
+  // Count-up animation for hero stats
+  (function() {
+    const counters = document.querySelectorAll('.hstat-n[data-target]');
+    let animated = false;
+    const statsObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !animated) {
+          animated = true;
+          counters.forEach(el => {
+            const target = parseInt(el.dataset.target);
+            const prefix = el.dataset.prefix || '';
+            const suffix = el.dataset.suffix || '';
+            const duration = 1800;
+            const start = performance.now();
+            function update(now) {
+              const elapsed = now - start;
+              const progress = Math.min(elapsed / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              const current = Math.round(eased * target);
+              el.textContent = prefix + current.toLocaleString() + suffix;
+              if (progress < 1) requestAnimationFrame(update);
+            }
+            requestAnimationFrame(update);
+          });
+          statsObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    const statsSection = document.querySelector('.hero-stats');
+    if (statsSection) statsObserver.observe(statsSection);
   })();
 
   // Reveal on scroll
